@@ -37,7 +37,7 @@ Saída:
 Vamos utilizar ```Xc,s``` oara reoresebtar que o minicurso _c_  é ofertado no slot _s_
 
 ### Restrições
-1 . Cada minicurso deve ser ofertado em pleo menos um slot.
+1 . Cada minicurso deve ser ofertado em pelo menos um slot.
 ``` 
 (x1,1 v X1,2 v X1,3 v .... v X1,s) ^ ..... ^ (Xc, 1 v Xc,2 v Xc,3 ... Xc,s)
 ```
@@ -46,5 +46,14 @@ Vamos utilizar ```Xc,s``` oara reoresebtar que o minicurso _c_  é ofertado no s
 ```
 ~(X,1,1 ^ X1,2) ^ ~(X1,1 ^ X1,3) ^ ~(X1,1 ^ X1,4) ... ^ ~(Xc,s-1 ^ Xc, s)
 ```
+Aplicando De morgan obtemos:
+
+```
+(~X1,1 v ~X1,2) ^ (~X1,1 v ~X1,3) v (~X1,1 v ~X1,4)... ^ (Xc,s-1 v Xc,s)
+```
 
 3. 
+
+```
+(~X1,1 v ~X2,1) ^....^(~X1,s v...v ~Xc,s)
+```
