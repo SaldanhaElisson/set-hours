@@ -52,7 +52,7 @@ Aplicando De morgan obtemos:
 (~X1,1 v ~X1,2) ^ (~X1,1 v ~X1,3) v (~X1,1 v ~X1,4)... ^ (Xc,s-1 v Xc,s)
 ```
 
-3. 
+3. Cursos com inscritos em comum não podem estar no mesmo horário
 
 ```
 (~X1,1 v ~X2,1) ^....^(~X1,s v...v ~Xc,s)
