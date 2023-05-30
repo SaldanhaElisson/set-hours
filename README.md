@@ -3,13 +3,12 @@
 ## Descrição do Problema 
 **Definição dos Hoário de Cursos em um Evento**
 
-_Um evento vai oferecer *K**minicursos de uma hora de duração cada. Dessa, forma, os organizadores do evento vão definir os horário em **slots** de uma hora de duração,  por exemplo, 8:00-9:00, 9:00-10:00, 10:00-11:00, e assim por diante. Os participantes podem se inscrever em mais de um minicurso, Logo, a organização do evento deseja agendars horários dos minicurssos de forma a atender as incrições dos participantes, ou seja, **minicursos que possuem inscrições de um mesmo participante não podem ser ofertados no mesmo horário**_
+_Um evento vai oferecer **K** minicursos de uma hora de duração cada. Dessa, forma, os organizadores do evento vão definir os horário em **slots** de uma hora de duração,  por exemplo, 8:00-9:00, 9:00-10:00, 10:00-11:00, e assim por diante. Os participantes podem se inscrever em mais de um minicurso, Logo, a organização do evento deseja agendars horários dos minicurssos de forma a atender as incrições dos participantes, ou seja, **minicursos que possuem inscrições de um mesmo participante não podem ser ofertados no mesmo horário**_
 
 ### Dados de entrada
 
-- [ ]  **K** -> Conjunto de minicursos
-- [ ]  **M** -> Conjunto de horário/slots disponíveis 
-- [ ]  **P(1, J)** -> Cursos com matrículas simultâneas
+- [ ]  **C** -> Conjunto de minicursos
+- [ ]  **S** -> Conjunto de horário/slots disponíveis 
 
 
 ### Exemplo
@@ -44,16 +43,10 @@ Vamos utilizar ```Xc,s``` oara reoresebtar que o minicurso _c_  é ofertado no s
 
 2. Cada minicurso deve ser ofertado em no máximo um slot
 ```
-~(X,1,1 ^ X1,2) ^ ~(X1,1 ^ X1,3) ^ ~(X1,1 ^ X1,4) ... ^ ~(Xc,s-1 ^ Xc, s)
-```
-Aplicando De morgan obtemos:
-
-```
 (~X1,1 v ~X1,2) ^ (~X1,1 v ~X1,3) v (~X1,1 v ~X1,4)... ^ (Xc,s-1 v Xc,s)
 ```
 
 3. Cursos com inscritos em comum não podem estar no mesmo horário
-
 ```
 (~X1,1 v ~X2,1) ^....^(~X1,s v...v ~Xc,s)
 ```
